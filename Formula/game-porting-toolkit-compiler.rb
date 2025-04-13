@@ -36,8 +36,14 @@ class GamePortingToolkitCompiler < Formula
     system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.2/llvm-20.1.2.src.tar.xz"
     system "tar", "-xvf", "llvm-20.1.2.src.tar.xz"
     system "mv", "llvm-20.1.2.src", "llvm"
+    system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.2/cmake-20.1.2.src.tar.xz"
+    system "tar", "-xvf", "cmake-20.1.2.src.tar.xz"
+    system "mv", "cmake-20.1.2.src", "cmake"
    # system "mkdir", "llvm"
   # system "cp", "-a", "/usr/local/Cellar/llvm/.", "llvm/" 
+
+
+  
 
     mkdir "clang-build" do
       # Build an x86_64-native clang.
