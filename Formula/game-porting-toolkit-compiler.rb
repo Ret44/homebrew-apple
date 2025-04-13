@@ -29,8 +29,13 @@ class GamePortingToolkitCompiler < Formula
   def install
     # The 24.0.5 tarball contains an empty sources/freetype directory, which confuses Homebrew.
     # So we extract it ourself. This also lets us restrict extraction to just the clang directory.
-    # system "tar", "-xf", "crossover-sources-24.0.5.tar.gz", "--include=sources/clang/*", "--strip-components=2"
-  
+    system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0/clang-20.1.0.src.tar.xz"
+    system "tar", "-xvf", "clang-20.1.0.src.tar.xz"
+    system "mv", "clang-20.1.0.src.tar.xz", "clang"
+    system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0/LLVM-20.1.0-macOS-ARM64.tar.xz"
+    system "tar", "-xvf", "LLVM-20.1.0-macOS-ARM64.tar.xz"
+    system "mv", "LLVM-20.1.0-macOS-ARM64.tar.xz", "llvm"
+    
 
     mkdir "clang-build" do
       # Build an x86_64-native clang.
