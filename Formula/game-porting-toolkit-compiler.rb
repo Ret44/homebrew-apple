@@ -35,6 +35,7 @@ class GamePortingToolkitCompiler < Formula
       # Build an x86_64-native clang.
       system "cmake", "-G", "Ninja",
                       "-DCMAKE_VERBOSE_MAKEFILE=#{verbose? ? "On" : "Off"}",
+                      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                       "-DCMAKE_INSTALL_PREFIX=#{prefix}",
                       "-DCMAKE_MAKE_PROGRAM=ninja",
                       "-DCMAKE_BUILD_TYPE=Release",
