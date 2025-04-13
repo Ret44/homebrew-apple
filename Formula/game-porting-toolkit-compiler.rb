@@ -29,8 +29,9 @@ class GamePortingToolkitCompiler < Formula
   def install
     # The 24.0.5 tarball contains an empty sources/freetype directory, which confuses Homebrew.
     # So we extract it ourself. This also lets us restrict extraction to just the clang directory.
-    system "tar", "-xf", "crossover-sources-24.0.5.tar.gz", "--include=sources/clang/*", "--strip-components=2"
-    
+    # system "tar", "-xf", "crossover-sources-24.0.5.tar.gz", "--include=sources/clang/*", "--strip-components=2"
+  
+
     mkdir "clang-build" do
       # Build an x86_64-native clang.
       system "cmake", "-G", "Ninja",
