@@ -39,9 +39,10 @@ class GamePortingToolkitCompiler < Formula
     system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.2/cmake-20.1.2.src.tar.xz"
     system "tar", "-xvf", "cmake-20.1.2.src.tar.xz"
     system "mv", "cmake-20.1.2.src", "cmake"
-   # system "mkdir", "llvm"
-  # system "cp", "-a", "/usr/local/Cellar/llvm/.", "llvm/" 
-
+    system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.2/third-party-20.1.2.src.tar.xz"
+    system "tar", "-xvf", "third-party-20.1.2.src.tar.xz"
+    system "mv", "third-party-20.1.2.src", "third-party"
+  
 
   
 
