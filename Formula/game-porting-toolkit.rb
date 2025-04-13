@@ -1,5 +1,5 @@
-# Copyright (C) 2023 Apple, Inc.
-# 
+# Copyright (C) 2024 Apple, Inc.
+#
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
 # License as published by the Free Software Foundation; either
@@ -14,7 +14,7 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
-# The 22.1.1 tarball contains an empty sources/freetype directory, which confuses the default CurlDownloadStrategy.
+# The 24.0.5 tarball contains an empty sources/freetype directory, which confuses the default CurlDownloadStrategy.
 # A custom strategy also allows us to restrict extraction to just the wine subdirectory.
 class TarballDownloadStrategy < CurlDownloadStrategy
   def stage(&block)
@@ -25,11 +25,11 @@ class TarballDownloadStrategy < CurlDownloadStrategy
 end
 
 class GamePortingToolkit < Formula
-  version "1.1"
+  version "2.0"
   desc "Apple Game Porting Toolkit"
   homepage "https://developer.apple.com/"
-  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: TarballDownloadStrategy
-  sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
+  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-24.0.5.tar.gz", using: TarballDownloadStrategy
+  sha256 "a6f4089c522ec30c4715927ed8898b0cbd2f5bc113b1fee30350bbf16581d473"
   patch :p0, :DATA
 
   depends_on arch: :x86_64

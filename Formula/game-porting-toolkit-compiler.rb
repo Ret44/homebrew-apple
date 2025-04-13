@@ -14,11 +14,11 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 class GamePortingToolkitCompiler < Formula
-  version "0.1"
-  desc "Compiler for Apple Game Porting Toolkit"
+  version "0.2"
+  desc "Compiler for Apple Game Porting Toolkit 2"
   homepage "https://developer.apple.com/"
-  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-22.1.1.tar.gz", using: :nounzip
-  sha256 "cdfe282ce33788bd4f969c8bfb1d3e2de060eb6c296fa1c3cdf4e4690b8b1831"
+  url "https://media.codeweavers.com/pub/crossover/source/crossover-sources-24.0.5.tar.gz", using: :nounzip
+  sha256 "a6f4089c522ec30c4715927ed8898b0cbd2f5bc113b1fee30350bbf16581d473"
   # license ""
   
   depends_on "cmake" => :build
@@ -27,9 +27,9 @@ class GamePortingToolkitCompiler < Formula
   keg_only :provided_by_macos
   
   def install
-    # The 22.1.1 tarball contains an empty sources/freetype directory, which confuses Homebrew.
+    # The 24.0.5 tarball contains an empty sources/freetype directory, which confuses Homebrew.
     # So we extract it ourself. This also lets us restrict extraction to just the clang directory.
-    system "tar", "-xf", "crossover-sources-22.1.1.tar.gz", "--include=sources/clang/*", "--strip-components=2"
+    system "tar", "-xf", "crossover-sources-24.0.5.tar.gz", "--include=sources/clang/*", "--strip-components=2"
     
     mkdir "clang-build" do
       # Build an x86_64-native clang.
