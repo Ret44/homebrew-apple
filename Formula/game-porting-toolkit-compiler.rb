@@ -33,9 +33,9 @@ class GamePortingToolkitCompiler < Formula
     system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0/clang-20.1.0.src.tar.xz"
     system "tar", "-xvf", "clang-20.1.0.src.tar.xz"
     system "mv", "clang-20.1.0.src", "clang"
-    system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0/LLVM-20.1.0-macOS-ARM64.tar.xz"
-    system "tar", "-xvf", "LLVM-20.1.0-macOS-ARM64.tar.xz"
-    system "mv", "LLVM-20.1.0-macOS-ARM64", "llvm"
+    system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.2/llvm-20.1.2.src.tar.xz"
+    system "tar", "-xvf", "llvm-20.1.2.src.tar.xz"
+    system "mv", "llvm-20.1.2.src", "llvm"
    # system "mkdir", "llvm"
   # system "cp", "-a", "/usr/local/Cellar/llvm/.", "llvm/" 
 
