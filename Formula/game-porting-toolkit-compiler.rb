@@ -36,6 +36,8 @@ class GamePortingToolkitCompiler < Formula
    # system "wget", "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0/LLVM-20.1.0-macOS-ARM64.tar.xz"
    # system "tar", "-xvf", "LLVM-20.1.0-macOS-ARM64.tar.xz"
    # system "mv", "LLVM-20.1.0-macOS-ARM64.tar.xz", "llvm"
+   system "mkdir", "llvm"
+   system "cp", "/usr/local/Cellar/llvm/*", "llvm/" 
 
     mkdir "clang-build" do
       # Build an x86_64-native clang.
